@@ -1,5 +1,60 @@
-﻿<h3>ProductList</h3>
+﻿<ul class="list-unstyled">
+    @foreach(var product in Products)
+    {
+        <li class="oi-media-pause my-3">
+            <div class="media-img-wrapper mr-2">
+                <a href="#">
+                    <img class="media-img" src"@product.ImageUrl" alt="@product.Title" />
+                </a>
+            </div>
+            <div class="media-body">
+                <a href="#">
+                    <h4 class="mb-0">@product.Title</h4>
+                </a>
+                <p>@product.Description</p>
+                <h5 class="price">
+                    $@product.Price
+                </h5>
+            </div>
+           
+        </li>
+    }
+</ul>
 
 @code {
-
+    private static List<Product> Products = new List<Product>
+    {
+        new Product
+        {
+            Id = 1,
+            Title = "T1",
+            Description = "D!",
+            ImageUrl = "https://unsplash.com/photos/ZZvnCHl_c6M",
+            Price = 9.99m
+        },
+         new Product
+        {
+            Id = 2,
+            Title = "T2",
+            Description = "D2",
+            ImageUrl = "https://unsplash.com/photos/qToVxSYXPYU",
+            Price = 9.99m
+        },
+         new Product
+        {
+            Id = 3,
+            Title = "T3",
+            Description = "D3",
+            ImageUrl = "https://unsplash.com/photos/wH3YxJwMC5o",
+            Price = 9.99m
+        },
+         new Product
+        {
+            Id = 4,
+            Title = "T4",
+            Description = "D4",
+            ImageUrl = "https://unsplash.com/photos/RL3F99l0XYE",
+            Price = 9.99m
+        }
+    };
 }
